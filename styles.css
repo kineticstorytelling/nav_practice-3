@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg: #211064;
+    --logo: rgb(226, 226, 226);
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: var(--bg);
+    font-family: 'Montserrat', sans-serif;
+    min-height: 8vh;
+}
+
+.logo{
+    color: var(--logo);
+    letter-spacing: 5px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.nav_links{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.nav_links li{
+    list-style: none;
+}
+
+.nav_links a{
+    color: var(--logo);
+    text-decoration: none;
+    /* this gets rid of the underline */
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* this is it for setting nav bar */
+
+.burger{
+    display: none;
+    cursor: pointer;
+}
+
+.nav-active{
+    transform: translate(0%);
+}
+
+@media screen and (max-width: 1024px){
+
+}
+.burger div{
+    width: 25px;
+    height: 2px;
+    background-color: var(--logo);
+    margin: 5px;
+    transition: all 0.3 ease;
+}
+
+@media screen and (max-width: 1024px) {
+    .nav_links{
+        width: 60%;
+    }    
+}
+
+@media screen and (max-width: 768px) {
+    body{
+        overflow-x: hidden;
+    }
+    .nav_links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: var(--bg);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translate(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav_links li{
+        opacity: 0;
+    }
+    .burger{
+        display:block;
+    }    
+}
+
+.nav-active{
+    transform: translate(0%);
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translate(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0px);
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+
+} 
